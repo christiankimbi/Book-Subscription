@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookSubscription.Application.Interfaces.Persistance
+namespace BookSubscription.Application.Interfaces.Persistence
 {
     public interface ICategoryRepository : IAsyncRepository<Category>
     {
-        Task<List<Category>> GetCategoriesWithBooks(bool includePassedEvents);
+        Task<List<Category>> GetCategoriesWithBooks();
     }
 }

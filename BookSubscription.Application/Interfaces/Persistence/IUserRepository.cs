@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookSubscription.Application.Interfaces.Persistance
+namespace BookSubscription.Application.Interfaces.Persistence
 {
-    public interface IBookRepository : IAsyncRepository<Book>
+    public interface IUserRepository : IAsyncRepository<User>
     {
-
     }
 }

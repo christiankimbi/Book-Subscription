@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookSubscription.Application.Interfaces.Persistance
+namespace BookSubscription.Application.Interfaces.Persistence
 {
     public interface IAsyncRepository<T>    where T : class
     {

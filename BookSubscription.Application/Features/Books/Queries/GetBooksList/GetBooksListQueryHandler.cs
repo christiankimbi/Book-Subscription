@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using BookSubscription.Application.Interfaces.Persistance;
+using BookSubscription.Application.Interfaces.Persistence;
 using BookSubscription.Domain.Entities;
 using MediatR;
 using System;
