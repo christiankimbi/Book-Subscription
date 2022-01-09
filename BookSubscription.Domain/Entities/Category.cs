@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookSubscription.Domain.Entities
 {
-    public class Category
+    public class Category : BaseEntity
     {
         public Guid CategoryId { get; set; }
         public string Name { get; set; }
