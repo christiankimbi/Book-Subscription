@@ -16,7 +16,6 @@ namespace BookSubscription.Domain.Entities
         {
             CategoryId = Guid.Empty;
             Name = string.Empty;
-            Books = new List<Book>();
         }
     }
 }

@@ -10,5 +10,6 @@ namespace BookSubscription.Application.Features.Subscriptions.Queries.GetSubscri
     public class GetSubscriptionDetailQuery : IRequest<SubscriptionDetailVm> 
     {
         public Guid SubscriptionId { get; set; }
+        public Guid UserId { get; set; }
     }
 }

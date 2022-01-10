@@ -1,8 +1,10 @@
-﻿using BookSubscription.Application.Features.Books.Commands.CreateBook;
+﻿
+using BookSubscription.Application.Features.Books.Commands.CreateBook;
 using BookSubscription.Application.Features.Books.Commands.DeleteBook;
 using BookSubscription.Application.Features.Books.Commands.UpdateBook;
 using BookSubscription.Application.Features.Books.Queries.GetBookDetails;
 using BookSubscription.Application.Features.Books.Queries.GetBooksList;
+using BookSubscription.Application.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,10 +16,13 @@ namespace BookSubscription.Api.Controllers
     public class BookController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly ILoggedInUserService _loggedInUserService;
 
-        public BookController(IMediator mediator)
+
+        public BookController(IMediator mediator, ILoggedInUserService loggedInUserService)
         {
             _mediator = mediator;
+            _loggedInUserService = loggedInUserService;
         }
 
         [HttpGet(Name = "GetAllBooks")]

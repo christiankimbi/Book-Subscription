@@ -15,14 +15,12 @@ namespace BookSubscription.Application.Features.Subscriptions.Queries.GetSubscri
     {
 
         private readonly IAsyncRepository<Subscription> _subscriptionRepository;
-        private readonly IAsyncRepository<User> _userRepository;
         private readonly IAsyncRepository<Book> _bookRepository;
         private readonly IMapper _mapper;
 
-        public GetSubscriptionDetailQueryHandler(IAsyncRepository<Subscription> subscriptionRepository, IAsyncRepository<User> userRepository, IAsyncRepository<Book> bookRepository, IMapper mapper)
+        public GetSubscriptionDetailQueryHandler(IAsyncRepository<Subscription> subscriptionRepository,  IAsyncRepository<Book> bookRepository, IMapper mapper)
         {
             _subscriptionRepository = subscriptionRepository;
-            _userRepository = userRepository;
             _bookRepository = bookRepository;
             _mapper = mapper;
         }
@@ -30,12 +28,8 @@ namespace BookSubscription.Application.Features.Subscriptions.Queries.GetSubscri
         public async Task<SubscriptionDetailVm> Handle(GetSubscriptionDetailQuery request, CancellationToken cancellationToken)
         {
             var subsciption = await _subscriptionRepository.GetByIdAsync(request.SubscriptionId);
+ 
             var subscriptionVm = _mapper.Map<SubscriptionDetailVm>(subsciption);
-
-
-            var user = await _userRepository.GetByIdAsync(subsciption.UserId);
-
-            subscriptionVm.User = _mapper.Map<UserDto>(user);
 
             var book = await _bookRepository.GetByIdAsync(subsciption.BookId);
             subscriptionVm.Book = _mapper.Map<BookDto>(book);

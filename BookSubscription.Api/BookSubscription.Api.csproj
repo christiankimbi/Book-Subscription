@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BookSubscription.Application\BookSubscription.Application.csproj" />
+    <ProjectReference Include="..\BookSubscription.Identity\BookSubscription.Identity.csproj" />
     <ProjectReference Include="..\BookSubscription.Persistence\BookSubscription.Persistence.csproj" />
   </ItemGroup>
 
